@@ -1,0 +1,13 @@
+name: ds_assessment
+channels:
+  - defaults
+dependencies:
+  - python=3.12.8
+  - matplotlib
+  - numpy
+  - pandas
+  - requests
+  - beautifulsoup4
+  - lxml
+  - re
+  - seaborn
