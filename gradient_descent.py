@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 def loss(x, y, b):
     '''
     Compute loss given vectors x, y and scalar b
@@ -21,7 +20,7 @@ def gradient_descent(x, y, b, e, epsilon=1e-6, max_itr=10000, verbose=True):
     Perform gradient descent with supplied input vectors x and y,
     an initial scalar value b, and a learning rate e. Algorithm
     terminates if the value of b converges or reaches the maximum
-    number of iterations allowed.
+    number of iterations allowed (default 10,000).
     '''
 
     b_current = b
@@ -61,7 +60,7 @@ b_init = np.random.randint(0, 11)
 
 ## initial test ##
 # run GD
-b_est, loss_list, gradient_list, num_itr = gradient_descent(x=x, y=y, b=b_init, e=lr)
+b_est, loss_list, gradient_list, num_itr = gradient_descent(x=x, y=y, b=b_init, e=lr, verbose=False)
 # diagnostics
 print(f"x={x} and y={y}\n The true b={b_true} and the estimated b by gradient descent={b_est}")
 # plotting
@@ -87,6 +86,8 @@ for j, lr in enumerate(lr_list):
 # plot 1: loss versus learning rate
 plt.figure()
 plt.plot(lr_list, loss_final_list, marker='o')
+plt.xscale('log')
+plt.xlim(min(lr_list) * 0.8, max(lr_list) * 1.2)
 plt.xlabel('Learning rates')
 plt.ylabel('Final loss')
 plt.title('Loss vs Learning Rate')
@@ -95,11 +96,13 @@ plt.savefig('GD_lr_v_loss.png')
 # plot 2: number of iterations versus learning rate
 plt.figure()
 plt.plot(lr_list, itr_final_list, marker = 'o')
+plt.xscale('log')
+plt.xlim(min(lr_list) * 0.8, max(lr_list) * 1.2)
 plt.xlabel('Learning rates')
 plt.ylabel('# Iterations')
 plt.title('Interations vs Learning Rate')
 plt.savefig('GD_lr_v_itr.png')
 
-# print out estimated b
+# print out estimated b -> sometimes the biggest learning rate tested causes an overflow, leaving b_final NA
 print(lr_list)
 print(b_final_list)

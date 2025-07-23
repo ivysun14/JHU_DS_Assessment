@@ -1,16 +1,17 @@
 ## Q1
 ![Death roll by year](Q1.png)
 
-The scatterplot shows the number of people estimated to have died in the deadliest natural disasters by year over time, from around 1900 to 2025. 
-Each dot represents a specific disaster, with its position on the x-axis representing the year it occurred, and the height on the y-axis showing the number of deaths.
-For example, the dot with the highest position on the y-axis represents the China flood in 1931, with an estimated number of death over 2,000,000 people. 
-The color of each dot indicates the type of disaster, such as earthquake, flood, or cyclone. Most disasters resulted in around 100,000 deaths, as can be seen by majority of dots
-concentrating at the bottom of the plot. However, a few disasters had extremely high death tolls, especially one event in the 1930s that caused over 2 million deaths (1931 China flood).
-Earthquakes and tropical cyclones are frequently the most deadliest natural disasters in each year, reflected by the abundance of dots colored in red and blue from the plot.
-
-## Q2
-The learning rate controls the time the algorithm needs to reach convergence. The algorithm shows slower convergence when the learning rate is extremely low, and faster convergence when the
-learning rate falls in a reasonable range.
-
-The algorithm could fail under numerical instability caused by overly large learning rate.
+The scatterplot shows the number of people estimated to have died in different natural disaster events from around 1900 to 2025.
+Each dot represents a specific disaster, its position on the x-axis represents the year it occurred in, and the height on the y-axis showing the number of deaths. For example, the dot with the highest position on the y-axis represents the Spanish flu in 1920, with an estimated number of death of over 50 million people. 
+The color of each dot indicates the type of disaster, such as earthquake, flood, or cyclone. Sometimes the death count was caused by a combination of disasters of different types, and such combincations are preserved as their own categories. A few disaster types demonstrated extremely high death tolls over multiple occurrences, such as famines (in green) and disease outbreaks (in dark brown).
  
+## Q2
+| Plot 1 | Plot 2 |
+|--------|--------|
+| ![](GD_lr_v_itr.png) | ![](GD_lr_v_loss.png) |
+
+The figures show the result of simulating gradient descent with different learning rates, generated on a log scale.
+
+The learning rate controls how fast the algorithm reaches convergence. The algorithm will take extra iterations to converge if a small learning rate is supplied. In the simulation, the smallest learning rate tested did not lead to algorithm convergence in 10,000 iterations, which was set to be the maximum iterations allowed in this scenario. The algorithm's loss also remained high at iteration = 10,000. When the learning rate increases, the number of iterations it takes for gradient descent to converge decreased. With learning rates generated on a log scale in this simulation, the number of iterations went through a drastic decrease first then gradually converged. Final loss at algorithm convergence did not differ.
+
+The algorithm fails under numerical instability caused by a learning rate too large. When e is large, as we iterate through the algorithm the gradient grows large quickly eventually causing an overflow. When an overflow happens an 'inf' value is assigned and subsequent computations fail leading to a failure in the algorithm.
