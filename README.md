@@ -5,7 +5,7 @@ All codes are run within the environment specified in **environment.yml**.
 
 The scatterplot shows the number of people estimated to have died in different natural disaster events from around 1900 to 2025.
 Each dot represents a specific disaster, its position on the x-axis represents the year it occurred in, and the height on the y-axis showing the number of deaths. For example, the dot with the highest position on the y-axis represents the Spanish flu in 1920, with an estimated number of death of over 50 million people. 
-The color of each dot indicates the type of disaster, such as earthquake, flood, or cyclone. Sometimes the death count was caused by a combination of disasters of different types, and such combincations are preserved as their own categories. A few disaster types demonstrated extremely high death tolls over multiple occurrences, such as famines (in green) and disease outbreaks (in dark brown).
+The color of each dot indicates the type of disaster, such as earthquake, flood, or cyclone. Sometimes the death count was caused by a combination of disasters of different types, and such combincations are preserved as their own categories. A few disaster types demonstrated extremely high death tolls over multiple occurrences, such as famines (in green) and disease outbreaks (in dark brown). There also seems to be more disasters with higher death toll (counts > 3,000,000) before 1980 than after 1980.
  
 ## Q2
 | Plot 1 | Plot 2 |
