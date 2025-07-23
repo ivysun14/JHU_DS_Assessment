@@ -1,3 +1,5 @@
+All codes are run within the environment specified in **environment.yml**.
+
 ## Q1
 ![Death roll by year](Q1.png)
 
